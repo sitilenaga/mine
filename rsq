@@ -333,7 +333,7 @@ function OnlineControl()
             bot:connect()
             sleep(10000)
         end
-        GonWebhook("<@" .. YourDiscordid .. ">".."\n<:growbot:992058196439072770> | Bot Name : "..bot.name.."\n<:mega:984686541383290940> | Information : Bot Is Back Online\n<a:online:1007062631787544666> | Status : Online\n<:world:1240859738309394493> | World : "..tostring(world.name)..)
+        GonWebhook("<@" .. YourDiscordid .. ">".."\n<:growbot:992058196439072770> | Bot Name : "..bot.name.."\n<:mega:984686541383290940> | Information : Bot Is Back Online\n<a:online:1007062631787544666> | Status : Online\n<:world:1240859738309394493> | World : "..tostring(world.name))
     end
 end
 
