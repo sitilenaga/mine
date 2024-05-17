@@ -352,7 +352,7 @@ function tilealbg(x,y)
 end
 
 function on_stop(message)
-    --print("Bot's script is stopped due to "..message)
+    print("Bot's script is stopped due to "..message)
     GonWebhook("Script ("..bot.name..") Berhenti ".."<@" .. YourDiscordid .. ">")
   end
 
