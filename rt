@@ -14,12 +14,12 @@ function GonWebhook(Shinuqi)
     url = "https://cdn.discordapp.com/emojis/1016295109970645022.gif?size=80&quality=lossless"
     }
     $color = Get-Random -Minimum 0 -Maximum 16777215
-    $title = 'Protagonist - Rotation'
+    $title = 'Nextar26#0426 - Rotation'
     $description = "**]]..Shinuqi..[[**"
   
     $footer = [PSCustomObject]@{
         icon_url = "https://cdn.discordapp.com/emojis/978628955907170314.gif?size=96&quality=lossless"
-        text = "]].."Protagonist | Date : "..(os.date"%d/%m/%y":upper().." Hour : ")..os.date("%I")..":"..os.date("%M").." "..os.date("%p"):upper()..[["
+        text = "]].."Nextar26#0426 | Date : "..(os.date"%d/%m/%y":upper().." Hour : ")..os.date("%I")..":"..os.date("%M").." "..os.date("%p"):upper()..[["
     }
   
     $embedObject = [PSCustomObject]@{
@@ -49,12 +49,12 @@ function join(a,b)
     sleep(3000)
     bot:sendPacket(3,"action|join_request\nname|"..a.."|"..b.."\ninvitedWorld|0")
     sleep(6000)
-    dunyone = tostring(world.name)
-    if dunyone == "" or dunyone == "EXIT" then
+    Dunyadami = tostring(world.name)
+    if Dunyadami == "" or Dunyadami == "EXIT" then
     	join(a,b)
     end
-    cekdulu()
-    if dunyone ~= "" or dunyone ~= "EXIT" then
+    AnlikYer()
+    if Dunyadami ~= "" or Dunyadami ~= "EXIT" then
         if world:getTile(Botx,Boty).fg == 6 then
             join(a,b)
         end
@@ -95,7 +95,7 @@ function floats(idz)
   return {ucanlar = float}
 end
 
-function cekdulu()
+function AnlikYer()
     if bot.status ~= 1 then
         GonWebhook("Bot Offline ".."<@" .. YourDiscordid .. ">")
         while bot.status ~= 1 do
@@ -105,8 +105,8 @@ function cekdulu()
 	sleep(5000)
         GonWebhook("Bot Back To Online ".."<@" .. YourDiscordid .. ">")
     end
-    dunyone = tostring(world.name)
-    if dunyone ~= "" and dunyone ~= "EXIT" then
+    Dunyadami = tostring(world.name)
+    if Dunyadami ~= "" and Dunyadami ~= "EXIT" then
         localbot = world:getLocal()
         if localbot then
             Botx = math.floor(localbot.posx / 32) 
@@ -129,9 +129,9 @@ function Reconnect(list)
     if world.name ~= list then
         join(list,FarmWorldID)
     end
-    cekdulu()
-    dunyone = tostring(world.name)
-    if dunyone ~= "" and dunyone ~= "EXIT" then
+    AnlikYer()
+    Dunyadami = tostring(world.name)
+    if Dunyadami ~= "" and Dunyadami ~= "EXIT" then
         if world:getTile(Botx,Boty).fg == 6 then
             join(list,FarmWorldID)
         end
@@ -152,9 +152,9 @@ function Reconnectdropseed()
     if world.name ~= StorageWorld then
         join(StorageWorld,StorageWorldSeedID)
     end
-    cekdulu()
-    dunyone = tostring(world.name)
-    if dunyone ~= "" and dunyone ~= "EXIT" then
+    AnlikYer()
+    Dunyadami = tostring(world.name)
+    if Dunyadami ~= "" and Dunyadami ~= "EXIT" then
         if world:getTile(Botx,Boty).fg == 6 then
             join(StorageWorld,StorageWorldSeedID)
         end
@@ -175,9 +175,9 @@ function Reconnectdroppack()
     if world.name ~= PackDropWorld then
         join(PackDropWorld,PackDropWorldID)
     end
-    cekdulu()
-    dunyone = tostring(world.name)
-    if dunyone ~= "" and dunyone ~= "EXIT" then
+    AnlikYer()
+    Dunyadami = tostring(world.name)
+    if Dunyadami ~= "" and Dunyadami ~= "EXIT" then
         if world:getTile(Botx,Boty).fg == 6 then
             join(PackDropWorld,PackDropWorldID)
         end
@@ -261,7 +261,7 @@ function Dropf(list)
             bot:moveLeft()
         end
         GonWebhook("<:growbot:992058196439072770> Bot Name : "..bot.name..
-        "\n <:world:1240859738309394493> Current World : "..world.name..
+        "\n <a:World:997157064008810620> Current World : "..world.name..
         "\n <a:online:1007062631787544666> Status : "..bot.status..
         "\n <:pepper_tree_seed:1012630107715797073> Dropped Seed : "..floats(BlockID+1).ucanlar..
         "\n <:pepper_tree_seed:1012630107715797073> Dropped Block : "..floats(BlockID).ucanlar)
@@ -278,7 +278,7 @@ function Dropf(list)
             bot:moveLeft()
         end
         GonWebhook("<:growbot:992058196439072770> Bot Name : "..bot.name..
-        "\n <:world:1240859738309394493> Current World : "..world.name..
+        "\n <a:World:997157064008810620> Current World : "..world.name..
         "\n <a:online:1007062631787544666> Status : "..bot.status..
         "\n <:gems:994218103032520724> Dropped Pack : "..floats(PackitemID).ucanlar)
     end
@@ -327,15 +327,15 @@ function OnlineControl()
             bot:connect()
             sleep(10000)
         end
-        GonWebhook("<@" .. YourDiscordid .. ">".."\n<:growbot:992058196439072770> | Bot Name : "..bot.name.."\n<:mega:984686541383290940> | Information : Bot Is Back Online\n<a:online:1007062631787544666> | Status : Online\n<:world:1240859738309394493> | World : "..world.name..)
+        GonWebhook("<@" .. YourDiscordid .. ">".."\n<:growbot:992058196439072770> | Bot Name : "..bot.name.."\n<:mega:984686541383290940> | Information : Bot Is Back Online\n<a:online:1007062631787544666> | Status : Online\n<a:World:997157064008810620>")
     end
 end
 
 function tilealfg(x,y)
     OnlineControl()
-    cekdulu()
-    dunyone = tostring(world.name)
-    if dunyone ~= "" and dunyone ~= "EXIT" then
+    AnlikYer()
+    Dunyadami = tostring(world.name)
+    if Dunyadami ~= "" and Dunyadami ~= "EXIT" then
         tilefgx = world:getTile(x,y).fg
         return {tilefg = tilefgx}
     end
@@ -343,13 +343,14 @@ end
 
 function tilealbg(x,y)
     OnlineControl()
-    cekdulu()
-    dunyone = tostring(world.name)
-    if dunyone ~= "" and dunyone ~= "EXIT" then
+    AnlikYer()
+    Dunyadami = tostring(world.name)
+    if Dunyadami ~= "" and Dunyadami ~= "EXIT" then
         tilebgx = world:getTile(x,y).bg
         return {tilebg = tilebgx}
     end
 end
+
 
 BotPxz = BotPx-1
 BotPyz = BotPy-1
@@ -361,12 +362,12 @@ function PNB(list)
     sleep(2000)
     while inventory:getItemCount(BlockID) > 0 do
         Reconnect(list)
-        cekdulu()
+        AnlikYer()
 
         if BotPxz ~= Botx and BotPyz ~= BotY then
             bot:findPath(BotPxz,BotPyz)
             sleep(2000)
-            cekdulu()
+            AnlikYer()
         end
         if tilealfg(Botx-1,Boty).tilefg == 0 then 
 	if bot:isInTile(Botx,Boty) then
@@ -391,7 +392,7 @@ function PNB(list)
             if BotPxz ~= Botx and BotPyz ~= BotY then
                 bot:findPath(BotPxz,BotPyz)
                 sleep(1000)
-                cekdulu()
+                AnlikYer()
             end
 	    if bot:isInTile(Botx,Boty) then
             bot:hit(Botx-1,Boty) 
@@ -403,7 +404,7 @@ function PNB(list)
             if BotPxz ~= Botx and BotPyz ~= BotY then
                 bot:findPath(BotPxz,BotPyz)
                 sleep(1000)
-                cekdulu()
+                AnlikYer()
             end
 	    if bot:isInTile(Botx,Boty) then
             bot:hit(Botx-1,Boty+1)
@@ -415,7 +416,7 @@ function PNB(list)
             if BotPxz ~= Botx and BotPyz ~= BotY then
                 bot:findPath(BotPxz,BotPyz)
                 sleep(1000)
-                cekdulu()
+                AnlikYer()
             end
 	    if bot:isInTile(Botx,Boty) then
             bot:hit(Botx-1,Boty-1) 
@@ -535,11 +536,11 @@ while isOwner == true do
             join(list,FarmWorldID)
         end
         GonWebhook("<:growbot:992058196439072770> Bot Name : "..botcuk..
-        "\n <:world:1240859738309394493> Current World : "..world.name..
+        "\n <a:World:997157064008810620> Current World : "..world.name..
         "\n <a:online:1007062631787544666> Status : "..bot.status..
         "\n <:peppertree:999318156696887378> Ready Tree : "..scanTree(BlockID+1).Ready..
         "\n <:peppertree:999318156696887378> Unready Tree : "..scanTree(BlockID+1).Unready..
-        "\n <:fossil:1240860750298218527> Fossil : "..tarama(3918).miktr..
+        "\n <:Fossil:997497957848989737> Fossil : "..tarama(3918).miktr..
         "\n <:jam:987145988470898758> UpTime Bot : "..SecondTT(os.difftime(os.time(), startT)))
         Hazir(list)
         while AgacHazir == 1 do
