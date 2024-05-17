@@ -476,11 +476,6 @@ function dropPick()
     sleep(1000)
 end
 
-function on_stop(message)
-    print("Bot's script is stopped due to "..message)
-    GonWebhook("Script ("..bot.name..") Berhenti ".."<@" .. YourDiscordid .. ">")
-  end
-
 function PickaxeControl()
     if TakePickaxe == "yes" and inventory:getItemCount(98) == 0 then
         join(PickaxeWorld,PickaxeWorldID)
