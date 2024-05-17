@@ -351,9 +351,6 @@ function tilealbg(x,y)
     end
 end
 
-
-
-
 BotPxz = BotPx-1
 BotPyz = BotPy-1
 function PNB(list)
