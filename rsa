@@ -7,6 +7,7 @@ PickaxeWorld = string.upper(PickaxeWorld)
 PickaxeWorldID = string.upper(PickaxeWorldID)
 bot.collect_range=4
 bot.auto_collect = false
+
 function GonWebhook(Shinuqi)
     local script = [[
     $webHookUrl = "]]..WebhookUrl..[["
@@ -14,12 +15,12 @@ function GonWebhook(Shinuqi)
     url = "https://cdn.discordapp.com/emojis/1016295109970645022.gif?size=80&quality=lossless"
     }
     $color = Get-Random -Minimum 0 -Maximum 16777215
-    $title = 'Nextar26#0426 - Rotation'
+    $title = 'Protagonist - Rotation'
     $description = "**]]..Shinuqi..[[**"
   
     $footer = [PSCustomObject]@{
         icon_url = "https://cdn.discordapp.com/emojis/978628955907170314.gif?size=96&quality=lossless"
-        text = "]].."Nextar26#0426 | Date : "..(os.date"%d/%m/%y":upper().." Hour : ")..os.date("%I")..":"..os.date("%M").." "..os.date("%p"):upper()..[["
+        text = "]].."Protagonist | Date : "..(os.date"%d/%m/%y":upper().." Hour : ")..os.date("%I")..":"..os.date("%M").." "..os.date("%p"):upper()..[["
     }
   
     $embedObject = [PSCustomObject]@{
@@ -43,6 +44,11 @@ function GonWebhook(Shinuqi)
     local pipe = io.popen("powershell -command -", "w")
     pipe:write(script)
     pipe:close()
+end
+
+function on_stop(message)
+    print("Bot's script is stopped due to "..message)
+    GonWebhook("Script Berhenti ("..bot.name..") ".."<@" .. YourDiscordid .. ">")
 end
 
 function join(a,b) 
@@ -261,7 +267,7 @@ function Dropf(list)
             bot:moveLeft()
         end
         GonWebhook("<:growbot:992058196439072770> Bot Name : "..bot.name..
-        "\n <a:World:997157064008810620> Current World : "..world.name..
+        "\n <:world:1240859738309394493> Current World : "..world.name..
         "\n <a:online:1007062631787544666> Status : "..bot.status..
         "\n <:pepper_tree_seed:1012630107715797073> Dropped Seed : "..floats(BlockID+1).ucanlar..
         "\n <:pepper_tree_seed:1012630107715797073> Dropped Block : "..floats(BlockID).ucanlar)
@@ -278,7 +284,7 @@ function Dropf(list)
             bot:moveLeft()
         end
         GonWebhook("<:growbot:992058196439072770> Bot Name : "..bot.name..
-        "\n <a:World:997157064008810620> Current World : "..world.name..
+        "\n <:world:1240859738309394493> Current World : "..world.name..
         "\n <a:online:1007062631787544666> Status : "..bot.status..
         "\n <:gems:994218103032520724> Dropped Pack : "..floats(PackitemID).ucanlar)
     end
@@ -327,7 +333,7 @@ function OnlineControl()
             bot:connect()
             sleep(10000)
         end
-        GonWebhook("<@" .. YourDiscordid .. ">".."\n<:growbot:992058196439072770> | Bot Name : "..bot.name.."\n<:mega:984686541383290940> | Information : Bot Is Back Online\n<a:online:1007062631787544666> | Status : Online\n<a:World:997157064008810620>")
+        GonWebhook("<@" .. YourDiscordid .. ">".."\n<:growbot:992058196439072770> | Bot Name : "..bot.name.."\n<:mega:984686541383290940> | Information : Bot Is Back Online\n<a:online:1007062631787544666> | Status : Online\n<:world:1240859738309394493>")
     end
 end
 
@@ -536,11 +542,11 @@ while isOwner == true do
             join(list,FarmWorldID)
         end
         GonWebhook("<:growbot:992058196439072770> Bot Name : "..botcuk..
-        "\n <a:World:997157064008810620> Current World : "..world.name..
+        "\n <:world:1240859738309394493> Current World : "..world.name..
         "\n <a:online:1007062631787544666> Status : "..bot.status..
         "\n <:peppertree:999318156696887378> Ready Tree : "..scanTree(BlockID+1).Ready..
         "\n <:peppertree:999318156696887378> Unready Tree : "..scanTree(BlockID+1).Unready..
-        "\n <:Fossil:997497957848989737> Fossil : "..tarama(3918).miktr..
+        "\n <:fossil:1240860750298218527> Fossil : "..tarama(3918).miktr..
         "\n <:jam:987145988470898758> UpTime Bot : "..SecondTT(os.difftime(os.time(), startT)))
         Hazir(list)
         while AgacHazir == 1 do
